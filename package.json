@@ -1,6 +1,6 @@
 {
-  "name": "@geomatico/maplibre-cog-protocol",
-  "version": "0.4.0",
+  "name": "@qntm-code/maplibre-cog-protocol",
+  "version": "0.5.0",
   "description": "Custom protocol to load Cloud Optimized GeoTIFFs (COG) in Maplibre GL JS",
   "scripts": {
     "watch:src": "rimraf dist && rollup -c rollup.config.mjs --environment DEV --watch",
@@ -18,7 +18,7 @@
   "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "author": "Geomatico <info@geomatico.es>",
+  "author": "Ben Meyrick<bameyrick@gmail.com>",
   "devDependencies": {
     "@eslint/js": "^9.7.0",
     "@mapbox/sphericalmercator": "^1.2.0",
@@ -27,6 +27,7 @@
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^11.1.6",
     "@types/d3-scale": "^4.0.8",
+    "@types/geojson": "^7946.0.16",
     "@types/jest": "^29.5.12",
     "@types/mapbox__sphericalmercator": "^1.2.3",
     "@typescript-eslint/eslint-plugin": "^7.15.0",
@@ -36,6 +37,7 @@
     "eslint": "^8.57.0",
     "eslint-plugin-jest": "^28.6.0",
     "five-server": "^0.3.3",
+    "geomask": "^0.5.1",
     "geotiff": "^2.1.3",
     "gh-pages": "^6.1.1",
     "globals": "^15.8.0",

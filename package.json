@@ -10,8 +10,7 @@
     "test": "jest --coverage --verbose --runInBand",
     "test:ci": "jest --runInBand --coverage --verbose",
     "build": "npm run lint && npm run test && rimraf dist && rollup -c rollup.config.mjs",
-    "gh-publish": "rimraf examples/dist && npm run build && cp -r dist examples && gh-pages -d examples",
-    "postinstall": "patch-package"
+    "gh-publish": "rimraf examples/dist && npm run build && cp -r dist examples && gh-pages -d examples"
   },
   "files": [
     "dist"
@@ -44,7 +43,6 @@
     "globals": "^15.8.0",
     "jest": "^29.7.0",
     "maplibre-gl": "^4.5.0",
-    "patch-package": "^8.0.0",
     "quick-lru": "^6.1.2",
     "rimraf": "^6.0.1",
     "rollup": "^4.27.3",

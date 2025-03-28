@@ -19,6 +19,9 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "author": "Ben Meyrick<bameyrick@gmail.com>",
+  "publishConfig": {
+    "access": "public"
+  },
   "devDependencies": {
     "@eslint/js": "^9.7.0",
     "@mapbox/sphericalmercator": "^1.2.0",

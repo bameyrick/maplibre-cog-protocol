@@ -1,6 +1,8 @@
 # Maplibre COG Protocol
 
-Custom protocol to load Cloud Optimized GeoTIFFs (COG) in Maplibre GL JS
+Custom protocol to load Cloud Optimized GeoTIFFs (COG) in Maplibre GL JS.
+
+Forked from [@geomatico/maplibre-cog-protocol](https://github.com/geomatico/maplibre-cog-protocol) to add masking functionality.
 
 ## Demo page
 
@@ -18,7 +20,7 @@ For better quality, use always `tileSize: 256` to match the size of tiles delive
   <head>
     <link rel="stylesheet" href="https://unpkg.com/maplibre-gl/dist/maplibre-gl.css" />
     <script src="https://unpkg.com/maplibre-gl/dist/maplibre-gl.js"></script>
-    <script src="https://unpkg.com/@geomatico/maplibre-cog-protocol/dist/index.js"></script>
+    <script src="https://unpkg.com/@qntm-code/maplibre-cog-protocol/dist/index.js"></script>
   </head>
   <body>
     <div id="map" style="width: 600px; height: 400px"></div>
@@ -52,11 +54,11 @@ For better quality, use always `tileSize: 256` to match the size of tiles delive
 
 ### With React Map GL
 
-`npm install @geomatico/maplibre-cog-protocol`
+`npm install @qntm-code/maplibre-cog-protocol`
 
 ```tsx
 import maplibregl from 'maplibre-gl';
-import { cogProtocol } from '@geomatico/maplibre-cog-protocol';
+import { cogProtocol } from '@qntm-code/maplibre-cog-protocol';
 import Map from 'react-map-gl/maplibre';
 
 maplibregl.addProtocol('cog', cogProtocol);
@@ -211,7 +213,7 @@ The `locationValues(url, location, zoom?)` method reads raw pixel values for a g
 Example usage in conjunction with maplibre API to get COG values on mouse hover:
 
 ```javascript
-import { locationValues } from '@geomatico/maplibre-cog-protocol';
+import { locationValues } from '@qntm-code/maplibre-cog-protocol';
 
 map.on('mousemove', ({ lngLat }) => {
   locationValues('./data/kriging.tif', { latitude: lngLat.lat, longitude: lnglat.lon }, map.getZoom()).then(console.log);
@@ -221,7 +223,7 @@ map.on('mousemove', ({ lngLat }) => {
 `locationValues` doesn't depend on Maplibre API or the CogProtocol, so it can be used to query raster values in applications without a map:
 
 ```javascript
-import { locationValues } from '@geomatico/maplibre-cog-protocol';
+import { locationValues } from '@qntm-code/maplibre-cog-protocol';
 
 const url = 'https://labs.geomatico.es/maplibre-cog-protocol/data/kriging.tif';
 locationValues(url, { latitude: 41.656278, longitude: 0.501394 }).then(console.log);
